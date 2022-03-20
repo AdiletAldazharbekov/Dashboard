@@ -1,0 +1,711 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background: #f16161;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.wrapper .header {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .header-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19%;
+  padding-left: 30px;
+}
+.wrapper .header-left a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+.wrapper .header-left a .comany-name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2c384f;
+  margin-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .header-left .burger {
+  border: none;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 40px;
+  width: 81%;
+}
+.wrapper .header-right .search {
+  width: 340px;
+  padding: 10px 19px 11px 22px;
+  color: #899bbe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+.wrapper .header-right .search input {
+  width: 100%;
+  border-style: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  background: transparent;
+}
+.wrapper .header-right .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 28px;
+}
+.wrapper .header-right .user .language {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.wrapper .header-right .user .account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.wrapper .main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wrapper .main .leftPanel {
+  width: 19%;
+  padding: 36px 24px 40px;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrapper .main .leftPanel .drop-btn {
+  background: #784ffe;
+  width: 100%;
+  height: 70px;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px;
+  margin-bottom: 25px;
+}
+.wrapper .main .leftPanel .drop-btn p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+.wrapper .main .leftPanel .drop-btn p img {
+  height: 100%;
+  margin-right: 16px;
+}
+.wrapper .main .leftPanel .drop-btn .drop {
+  right: 0;
+}
+.wrapper .main .leftPanel .dashboard {
+  width: 100%;
+  height: 54px;
+  padding: 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  border-radius: 8px;
+  color: #784ffe;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 10px;
+}
+.wrapper .main .leftPanel .dashboard img {
+  margin-right: 16px;
+}
+.wrapper .main .leftPanel .nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+.wrapper .main .leftPanel .nav .mainNav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+  max-height: 400px;
+}
+.wrapper .main .leftPanel .nav .mainNav::-webkit-scrollbar {
+  width: 0;
+}
+.wrapper .main .leftPanel .nav .mainNav a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 16px 26px;
+  color: #2c384f;
+}
+.wrapper .main .leftPanel .nav .mainNav a img {
+  margin-right: 20px;
+}
+.wrapper .main .leftPanel .nav .mainNav a:hover {
+  background: #e5e5e5;
+}
+.wrapper .main .leftPanel .nav .logout {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 16px 26px;
+  color: #eb3b5a;
+}
+.wrapper .main .leftPanel .nav .logout img {
+  margin-right: 20px;
+}
+.wrapper .main .leftPanel .nav .logout:hover {
+  background: #e5e5e5;
+}
+.wrapper .main .content {
+  width: 81%;
+  height: 100%;
+  padding: 36px 43px 40px 40px;
+  background: #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+.wrapper .main .content-overview {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .main .content-overview .overView {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #2c384f;
+}
+.wrapper .main .content-overview .btn {
+  padding: 10px 17px;
+  border: none;
+  border-radius: 12px;
+  background: #724bf2;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+.wrapper .main .content-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 29px;
+}
+.wrapper .main .content-top-start {
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px 15px 15px 30px;
+  width: 248px;
+  height: 187px;
+  width: 525px;
+  height: 187px;
+}
+.wrapper .main .content-top-start .coin__name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #899bbe;
+  margin-bottom: 5px;
+}
+.wrapper .main .content-top-start .coin__price {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #2c384f;
+  margin-bottom: 14px;
+}
+.wrapper .main .content-top-start .chart-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .main .content-top-start .chart-3 p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.wrapper .main .content-top-start .chart-3 p span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #eb3b5a;
+}
+.wrapper .main .content-top-center {
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px 15px 15px 30px;
+  width: 248px;
+  height: 187px;
+}
+.wrapper .main .content-top-center .coin__name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #899bbe;
+  margin-bottom: 5px;
+}
+.wrapper .main .content-top-center .coin__price {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #2c384f;
+  margin-bottom: 14px;
+}
+.wrapper .main .content-top-center .chart-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .main .content-top-center .chart-3 p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.wrapper .main .content-top-center .chart-3 p span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #eb3b5a;
+}
+.wrapper .main .content-top-end {
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px 15px 15px 30px;
+  width: 248px;
+  height: 187px;
+}
+.wrapper .main .content-top-end .coin__name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #899bbe;
+  margin-bottom: 5px;
+}
+.wrapper .main .content-top-end .coin__price {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #2c384f;
+  margin-bottom: 14px;
+}
+.wrapper .main .content-top-end .chart-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .main .content-top-end .chart-3 p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.wrapper .main .content-top-end .chart-3 p span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #eb3b5a;
+}
+.wrapper .main .content-bottom {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+.wrapper .main .content-bottom-Left {
+  max-width: 710px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+.wrapper .main .content-bottom-Left-portofolio {
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px 15px 15px 30px;
+  width: 100%;
+  height: 344px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+.wrapper .main .content-bottom-Left-portofolio p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2c384f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .main .content-bottom-Left-portofolio p img {
+  margin-right: 18px;
+}
+.wrapper .main .content-bottom-Left-portofolio .mainChart {
+  max-height: 240px;
+  height: 100%;
+}
+.wrapper .main .content-bottom-Left-transactions {
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px 15px 15px 30px;
+  width: 100%;
+  height: 219px;
+  height: 100%;
+}
+.wrapper .main .content-bottom-assets {
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 30px 15px 15px 30px;
+  max-width: 337px;
+  min-height: 593px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .main .content-bottom-assets .all-assets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrapper .main .content-bottom-assets .all-assets .assets-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 4px;
+}
+.wrapper .main .content-bottom-assets .all-assets .assets-header img {
+  margin-right: 18px;
+}
+.wrapper .main .content-bottom-assets .all-assets .assets-header-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2c384f;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins {
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  max-height: 455px;
+  margin-right: -7px;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins::-webkit-scrollbar {
+  width: 5px;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #e5e5e5;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins:hover::-webkit-scrollbar-thumb {
+  background-color: #724bf2;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem {
+  padding: 18px 0px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem:hover {
+  background: #e5e5e5;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coin-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 14px;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coinDesc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coinDesc .coin-name .name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2c384f;
+  margin-bottom: 6px;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coinDesc .coin-name .value {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #899bbe;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coinDesc .coin-price {
+  text-align: right;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coinDesc .coin-price .price {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2c384f;
+  margin-bottom: 7px;
+}
+.wrapper .main .content-bottom-assets .all-assets .listCoins .coinItem a .coinDesc .coin-price .prc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #20bf6b;
+}
+.wrapper .main .content-bottom-assets .btnViewAll {
+  background: #724bf2;
+  border: none;
+  border-radius: 12px;
+  height: 38px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #ffffff;
+}

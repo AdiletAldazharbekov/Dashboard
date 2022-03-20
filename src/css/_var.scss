@@ -1,0 +1,68 @@
+// colors
+$fiolet: #724bf2;
+$fiolet2: #784ffe;
+$white: #ffffff;
+$gray: #e5e5e5;
+$dark: #2c384f;
+$gray-text: #899bbe;
+$red: #eb3b5a;
+$green: #20bf6b;
+
+// Миксины
+@mixin nav_css {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	padding: 16px 26px;
+	// margin: 16px 0px;
+	img {
+		margin-right: 20px;
+	}
+	&:hover{
+		background: $gray;
+	}
+}
+
+@mixin card {
+	border: none;
+	border-radius: 8px;
+	background: $white;
+	padding: 30px 15px 15px 30px;
+}
+
+@mixin card_top_mini {
+	width: 248px;
+	height: 187px;
+	.coin__name {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 19px;
+		color: $gray-text;
+		margin-bottom: 5px;
+	}
+	.coin__price {
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 44px;
+		color: $dark;
+		margin-bottom: 14px;
+	}
+	.chart-3 {
+		display: flex;
+		justify-content: space-between;
+		p {
+			display: flex;
+			align-items: flex-start;
+			span {
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 19px;
+				color: $red;
+			}
+		}
+	}
+}

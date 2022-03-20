@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./src/css/global.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header-left">
+					<a class="navbar-brand" href="#">
+						<img
+							src="./src/img/Header/logo.svg"
+							alt=""
+							width="33"
+							height="33"
+						/>
+						<span class="comany-name">Zapper</span>
+					</a>
+
+					<button class="burger">
+						<img src="./src/img/Header/burger.svg" alt="" />
+					</button>
+				</div>
+				<div class="header-right">
+					<div class="search">
+						<input type="text" placeholder="Search token, value"/>
+						<img src="./src/img/Header/search.svg" alt="" />
+					</div>
+					<div class="user">
+						<div class="language">
+							<img src="./src/img/Header/flag.svg" alt="">
+							<span>USD</span>
+							<img src="./src/img/Header/dropDown.svg" alt="">
+						</div>
+						<img src="./src/img/Header/notification.svg" alt="">
+						<div class="account">
+							<img src="./src/img/Header/avatar.svg" alt="">
+							<img src="./src/img/Header/dropDown.svg" alt="">
+						</div>
+
+
+					</div>
+				</div>
+			</header>
+			<main class="main">
+				<aside class="leftPanel">
+					<button class="drop-btn">
+						<p>
+							<img
+								class="icon"
+								src="./src/img/Assets/btc.svg"
+								alt=""
+							/>Ethereum
+						</p>
+						<img
+							class="drop"
+							src="./src/img/LeftPanel/vector.svg"
+							alt=""
+						/>
+					</button>
+					<button class="dashboard">
+						<img
+							class="icon"
+							src="./src/img/LeftPanel/category.svg"
+							alt=""
+						/>Dashboard
+					</button>
+					<div class="nav">
+						<div class="mainNav">
+							<a href="#">
+								<img
+									src="./src/img/LeftPanel/arrow.svg"
+									alt=""
+								/>
+								Exchange
+							</a>
+							<a href="#">
+								<img
+									src="./src/img/LeftPanel/send.svg"
+									alt=""
+								/>
+								Pool
+							</a>
+							<a href="#">
+								<img
+									src="./src/img/LeftPanel/chart.svg"
+									alt=""
+								/>
+								Farm
+							</a>
+							<a href="#">
+								<img
+									src="./src/img/LeftPanel/note.svg"
+									alt=""
+								/>
+								Bridge
+							</a>
+							<a href="#">
+								<img
+									src="./src/img/LeftPanel/stickynote.svg"
+									alt=""
+								/>
+								History
+							</a>
+							<a href="#">
+								<img
+									src="./src/img/LeftPanel/setting.svg"
+									alt=""
+								/>
+								Settings
+							</a>
+						</div>
+						<a class="logout" href="#">
+							<img src="./src/img/LeftPanel/logout.svg" alt="" />
+							Logout
+						</a>
+					</div>
+				</aside>
+				<div class="content">
+					<div class="content-overview">
+						<h2 class="overView">Overview</h2>
+						<button type="button" class="btn">
+							<img
+								src="./src/img/Overview/customize.svg"
+								alt=""
+							/>
+							Customize
+						</button>
+					</div>
+					<div class="content-top">
+						<div class="content-top-start">
+							<p class="coin__name">Expenses</p>
+							<p class="coin__price">$68.67</p>
+							<div class="chart-3">
+								<p>
+									<img
+										src="./src/img/Overview/down.svg"
+										alt=""
+									/><span>4.36%</span>
+								</p>
+								<div>
+									<img
+										src="./src/img/Overview/chart-3.png"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="content-top-center">
+							<p class="coin__name">Expenses</p>
+							<p class="coin__price">$68.67</p>
+							<div class="chart-3">
+								<p>
+									<img
+										src="./src/img/Overview/down.svg"
+										alt=""
+									/><span>4.36%</span>
+								</p>
+								<div>
+									<img
+										src="./src/img/Overview/chart-3.png"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="content-top-end">
+							<p class="coin__name">Expenses</p>
+							<p class="coin__price">$68.67</p>
+							<div class="chart-3">
+								<p>
+									<img
+										src="./src/img/Overview/down.svg"
+										alt=""
+									/><span>4.36%</span>
+								</p>
+								<div>
+									<img
+										src="./src/img/Overview/chart-3.png"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content-bottom">
+						<div class="content-bottom-Left">
+							<div class="content-bottom-Left-portofolio">
+								<p>
+									<img
+										src="./src/img/Portofolio/calendar.svg"
+										alt=""
+									/>Portofolio Performance
+								</p>
+								<canvas class="mainChart"></canvas>
+							</div>
+							<div class="content-bottom-Left-transactions">
+								Дияс
+							</div>
+						
+						</div>
+						<div class="content-bottom-assets">
+							<div class="all-assets">
+								<div class="assets-header">
+									<img
+										src="./src/img/Assets/logo.svg"
+										alt="logo"
+									/>
+									<h2 class="assets-header-title">
+										All Assets
+									</h2>
+								</div>
+								<ul class="listCoins"></ul>
+							</div>
+							<button class="btnViewAll">View All</button>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="./src/js/index.js"></script>
+	</body>
+</html>
