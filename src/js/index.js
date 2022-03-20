@@ -1,11 +1,26 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     const list = document.querySelector('.listCoins')
     const btnViewAll = document.querySelector('.btnViewAll')
+    const btnNav = document.querySelector('.drop-btn')
 
+    const cloin3 = document.querySelector('.content-top')
+    
     const ctx = document.querySelector('.mainChart').getContext('2d')
+
    
     let count = 0
     let limit=10
+    let idCoin=0
+
+
+const getTrand = (num)=>{
+if (num>=0) {
+    return `<img src="./src/img/icons/up.svg" alt="up"/><span class="green">${num}%</span>`
+}else {
+    return `<img src="./src/img/icons/down.svg" alt="down"/><span class="red">${num*-1}%</span>`
+}
+}
+
 
     const renderData = coins =>{
         console.log(coins)
@@ -24,17 +39,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     </div>
                     <div class="coin-price">
                         <p class="price">$${Math.round(coinItem.priceBtc * coinItem.price*100)/100}</p>
-                        <p class="prc">
-                            <img
-                                src="./src/img/Assets/circle-up.svg"
-                                alt=""
-                            />8.36%</p>
+                        <div class="prc">${getTrand(coinItem.priceChange1h)}</div>
                     </div>
                 </div>
-                </a>
+            </a>
             `
             list.append(listItem)
         });
+    }
+
+    const renderData1 = coins =>{
+       const topCoins = [...coins]
+       let topCards = ['start','center','end']
+       for(i=0; i<3; i++){
+        let coin = topCoins[i]
+        let div=document.createElement('div')
+        div.className+=`content-top-${topCards[i]}`
+        div.innerHTML+=`
+        <p class="coin__name">${coin.name}</p>
+        <p class="coin__price">$${  Math.round(coin.price*100)/100   }</p>
+        <div class="chart-3">
+            <p>
+            ${getTrand(coin.priceChange1d)}   
+            </p>
+            <div>
+                <img
+                    src="./src/img/Overview/chart-3.png"
+                    alt=""
+                />
+            </div>
+        </div>
+        `
+        cloin3.append(div)
+       }     
     }
 
     const getData = async () => {  
@@ -50,10 +87,31 @@ catch (e) {
     }
 }
 
+const getCoin = async () => {  
+    try {
+        const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=0&limit=100`)
+        const data = await resp.json()
+        const {coins} = data
+        renderData1(coins)
+        }
+    catch (e) {
+        console.log(`Ошибка - ${e}`)
+        }
+    }
+
+
+
 btnViewAll.addEventListener('click',()=> {
     count+=limit
     getData()
 })
+
+btnNav.addEventListener('click',()=>{
+    cloin3.innerHTML=''
+    
+    getCoin()
+})
+
 list.addEventListener('scroll', e=>{
     // console.log(e)
     // count+=limit
@@ -62,7 +120,7 @@ list.addEventListener('scroll', e=>{
 
 
 
-
+getCoin()
 getData()
 
 

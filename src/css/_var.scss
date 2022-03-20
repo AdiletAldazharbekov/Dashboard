@@ -22,7 +22,7 @@ $green: #20bf6b;
 	img {
 		margin-right: 20px;
 	}
-	&:hover{
+	&:hover {
 		background: $gray;
 	}
 }
@@ -57,10 +57,17 @@ $green: #20bf6b;
 		p {
 			display: flex;
 			align-items: flex-start;
-			span {
-				font-weight: 500;
-				font-size: 16px;
-				line-height: 19px;
+			font-weight: 500;
+			font-size: 16px;
+			// line-height: 19px;
+			img{
+				width: 20px;
+				margin-right: 8px;
+			}
+			.green {
+				color: $green;
+			}
+			.red {
 				color: $red;
 			}
 		}
