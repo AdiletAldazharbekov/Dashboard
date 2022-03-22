@@ -18,12 +18,18 @@ $green: #20bf6b;
 	font-size: 16px;
 	line-height: 19px;
 	padding: 16px 26px;
+	border: none;
+	border-radius: 8px;
 	// margin: 16px 0px;
 	img {
 		margin-right: 20px;
 	}
 	&:hover {
 		background: $gray;
+		color: $fiolet2;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 19px;
 	}
 }
 
@@ -60,7 +66,7 @@ $green: #20bf6b;
 			font-weight: 500;
 			font-size: 16px;
 			// line-height: 19px;
-			img{
+			img {
 				width: 20px;
 				margin-right: 8px;
 			}

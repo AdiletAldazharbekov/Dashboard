@@ -75,6 +75,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 .wrapper .header-right {
   display: -webkit-box;
@@ -138,6 +139,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .wrapper .header-right .user .account {
   display: -webkit-box;
@@ -150,6 +152,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .wrapper .main {
   width: 100%;
@@ -206,27 +209,6 @@ body {
 .wrapper .main .leftPanel .drop-btn .drop {
   right: 0;
 }
-.wrapper .main .leftPanel .dashboard {
-  width: 100%;
-  height: 54px;
-  padding: 0px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: none;
-  border-radius: 8px;
-  color: #784ffe;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  margin-bottom: 10px;
-}
-.wrapper .main .leftPanel .dashboard img {
-  margin-right: 16px;
-}
 .wrapper .main .leftPanel .nav {
   width: 100%;
   display: -webkit-box;
@@ -250,8 +232,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 2px;
   overflow-y: scroll;
-  max-height: 400px;
+  max-height: 700px;
 }
 .wrapper .main .leftPanel .nav .mainNav::-webkit-scrollbar {
   width: 0;
@@ -269,12 +252,25 @@ body {
   font-size: 16px;
   line-height: 19px;
   padding: 16px 26px;
+  border: none;
+  border-radius: 8px;
   color: #2c384f;
 }
 .wrapper .main .leftPanel .nav .mainNav a img {
   margin-right: 20px;
 }
 .wrapper .main .leftPanel .nav .mainNav a:hover {
+  background: #e5e5e5;
+  color: #784ffe;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+.wrapper .main .leftPanel .nav .mainNav .dashboard {
+  color: #784ffe;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
   background: #e5e5e5;
 }
 .wrapper .main .leftPanel .nav .logout {
@@ -290,6 +286,8 @@ body {
   font-size: 16px;
   line-height: 19px;
   padding: 16px 26px;
+  border: none;
+  border-radius: 8px;
   color: #eb3b5a;
 }
 .wrapper .main .leftPanel .nav .logout img {
@@ -297,6 +295,10 @@ body {
 }
 .wrapper .main .leftPanel .nav .logout:hover {
   background: #e5e5e5;
+  color: #784ffe;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
 }
 .wrapper .main .content {
   width: 81%;
@@ -343,6 +345,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
+  cursor: pointer;
 }
 .wrapper .main .content-top {
   display: -webkit-box;
@@ -576,7 +579,78 @@ body {
   padding: 30px 15px 15px 30px;
   width: 100%;
   height: 219px;
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .main .content-bottom-Left-transactions .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .main .content-bottom-Left-transactions .title p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2c384f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .main .content-bottom-Left-transactions .title p img {
+  margin-right: 18px;
+}
+.wrapper .main .content-bottom-Left-transactions .title select {
+  padding: 12px 17px;
+  background: #efebff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2c384f;
+}
+.wrapper .main .content-bottom-Left-transactions .transaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .main .content-bottom-Left-transactions .transaction p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #2c384f;
+}
+.wrapper .main .content-bottom-Left-transactions .transaction .pp {
+  padding: 7px 15px;
+  color: #724bf2;
+  background: rgba(99, 52, 254, 0.12);
+  border-radius: 6px;
+}
+.wrapper .main .content-bottom-Left-transactions .transaction img {
+  cursor: pointer;
 }
 .wrapper .main .content-bottom-assets {
   border: none;
@@ -744,4 +818,5 @@ body {
   line-height: 15px;
   text-align: center;
   color: #ffffff;
+  cursor: pointer;
 }

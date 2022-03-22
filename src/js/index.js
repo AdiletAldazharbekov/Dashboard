@@ -1,33 +1,32 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+
+
     const list = document.querySelector('.listCoins')
     const btnViewAll = document.querySelector('.btnViewAll')
     const btnNav = document.querySelector('.drop-btn')
 
-    const cloin3 = document.querySelector('.content-top')
+    const topCoins = document.querySelector('.content-top')
     
     const ctx = document.querySelector('.mainChart').getContext('2d')
 
    
-    let count = 0
-    let limit=10
+   
     let idCoin=0
 
-
+// Функция определения направления тренда (зеленый вверх или красный вниз)
 const getTrand = (num)=>{
-if (num>=0) {
-    return `<img src="./src/img/icons/up.svg" alt="up"/><span class="green">${num}%</span>`
-}else {
-    return `<img src="./src/img/icons/down.svg" alt="down"/><span class="red">${num*-1}%</span>`
-}
+return num>0 ?
+`<img src="./src/img/icons/up.svg" alt="up"/><span class="green">${num}%</span>` :
+`<img src="./src/img/icons/down.svg" alt="down"/><span class="red">${num*-1}%</span>`
 }
 
-
-    const renderData = coins =>{
-        console.log(coins)
-        coins.forEach(coinItem => {
-            let listItem=document.createElement('li')
-            listItem.className+='coinItem'
-            listItem.innerHTML+=`
+// Список криптовалют
+const renderData = coins =>{
+    console.log(coins)
+    coins.forEach(coinItem => {
+        let listItem=document.createElement('li')
+        listItem.className+='coinItem'
+        listItem.innerHTML+=`
             <a  href="${coinItem.websiteUrl}" target="_blank">
                 <img class="coin-img" src="${coinItem.icon}" alt="coin"/>
                 <div class="coinDesc">
@@ -42,51 +41,49 @@ if (num>=0) {
                         <div class="prc">${getTrand(coinItem.priceChange1h)}</div>
                     </div>
                 </div>
-            </a>
-            `
-            list.append(listItem)
-        });
-    }
-
-    const renderData1 = coins =>{
-       const topCoins = [...coins]
-       let topCards = ['start','center','end']
-       for(i=0; i<3; i++){
-        let coin = topCoins[i]
-        let div=document.createElement('div')
-        div.className+=`content-top-${topCards[i]}`
-        div.innerHTML+=`
-        <p class="coin__name">${coin.name}</p>
-        <p class="coin__price">$${  Math.round(coin.price*100)/100   }</p>
-        <div class="chart-3">
-            <p>
-            ${getTrand(coin.priceChange1d)}   
-            </p>
-            <div>
-                <img
-                    src="./src/img/Overview/chart-3.png"
-                    alt=""
-                />
-            </div>
-        </div>
-        `
-        cloin3.append(div)
-       }     
-    }
-
-    const getData = async () => {  
-try {
-    const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=${count}&limit=${limit}`)
-    // skip=0 это индекс с какого элемента показываеть limit=10 кол-во элементов
-    const data = await resp.json()
-    const {coins} = data
-    renderData(coins)
-    }
-catch (e) {
-    console.log(`Ошибка - ${e}`)
-    }
+            </a>`
+        list.append(listItem)
+    });
 }
 
+const renderData1 = coins =>{
+    const coin3 = [...coins]
+    let topCards = ['start','center','end']
+    for(i=0; i<3; i++){
+    let coin = coin3[i]
+    let div=document.createElement('div')
+    div.className+=`content-top-${topCards[i]}`
+    div.innerHTML+=`
+        <p class="coin__name">${coin.name}</p>
+        <p class="coin__price">$${Math.round(coin.price*100)/100}</p>
+        <div class="chart-3">
+            <p>${getTrand(coin.priceChange1d)}</p>
+            <div><img src="./src/img/Overview/chart-3.png" alt=""/></div>
+        </div>`
+    topCoins.append(div)
+    }     
+}
+
+
+// Функция для формирования списка крпитовалют
+let skip = 0
+let limit=10
+const getData = async () => {  
+    try {
+        const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=${skip}&limit=${limit}`)
+        const data = await resp.json()
+        const {coins} = data
+        renderData(coins)
+        }
+    catch (e) {
+        console.log(`Ошибка - ${e}`)
+        }
+}
+getData()
+// ===================================================================================
+
+
+// Функция для формирования списка крпитовалют
 const getCoin = async () => {  
     try {
         const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=0&limit=100`)
@@ -98,30 +95,25 @@ const getCoin = async () => {
         console.log(`Ошибка - ${e}`)
         }
     }
+getCoin()
 
+// * * * * * *   События на действия пользоваателя   * * * * * *
 
-
+// при нажатии на кнопку "View All" увеличивается skip на размер limita и повторно вызывается функция getData
 btnViewAll.addEventListener('click',()=> {
-    count+=limit
+    skip+=limit
     getData()
 })
 
+// при нажатии на кнопку в навигационной панеле очищается верхняя часть и вызывается функция getTopCData
 btnNav.addEventListener('click',()=>{
-    cloin3.innerHTML=''
-    
+    topCoins.innerHTML=''
     getCoin()
 })
 
-list.addEventListener('scroll', e=>{
-    // console.log(e)
-    // count+=limit
-    // getData()
-})
 
 
 
-getCoin()
-getData()
 
 
 
