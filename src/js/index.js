@@ -123,12 +123,12 @@ let myChart
 const canvasDiv = document.querySelector('.content-bottom-Left-portofolio')
 // Формирование массива данных для основного графика
 const renderDataCoin = coins =>{
+let canvas=document.createElement('canvas')
+canvas.className='mainChart'
+canvasDiv.append(canvas)
     let arr =[]
     coins.forEach(element => {
         arr.push(Math.round(element[1]))
-        let canvas=document.createElement('canvas')
-        canvas.className='mainChart'
-        canvasDiv.append(canvas)
     })
 
     const ctx = document.querySelector('.mainChart').getContext('2d')
@@ -219,9 +219,11 @@ btnNav.addEventListener('click',()=>{
 const chartType = document.querySelector('#period')
 
 chartType.addEventListener('change', (event) => {
- charType=event.target.value
- myChart.destroy()
- getCoin()
+    charType=event.target.value
+    myChart.destroy()
+    canvasDiv.lastChild.remove()
+    console.log('Canva')
+    getCoin()
 })
 
 
