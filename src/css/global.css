@@ -552,7 +552,15 @@ body {
           justify-content: space-between;
   gap: 10px;
 }
-.wrapper .main .content-bottom-Left-portofolio p {
+.wrapper .main .content-bottom-Left-portofolio div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .main .content-bottom-Left-portofolio div p {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
@@ -564,17 +572,19 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.wrapper .main .content-bottom-Left-portofolio p img {
+.wrapper .main .content-bottom-Left-portofolio div p img {
   margin-right: 18px;
 }
-.wrapper .main .content-bottom-Left-portofolio select {
-  width: 10%;
+.wrapper .main .content-bottom-Left-portofolio div select {
+  padding: 0px 10px;
+  width: 75px;
   border: none;
-  background: #724bf2;
-  color: white;
-  font-weight: 400;
+  outline: none;
+  border-radius: 5px;
+  background: #e5e5e5;
+  color: #724bf2;
+  font-weight: 700;
   font-size: 12px;
-  line-height: 15px;
 }
 .wrapper .main .content-bottom-Left-portofolio .mainChart {
   max-height: 240px;

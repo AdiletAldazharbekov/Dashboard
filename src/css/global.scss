@@ -246,28 +246,33 @@ body {
 						flex-direction: column;
 						justify-content: space-between;
 						gap: 10px;
-
-						p {
-							font-weight: 600;
-							font-size: 20px;
-							line-height: 24px;
-							color: $dark;
+						div {
 							display: flex;
-							align-items: center;
-							img {
-								margin-right: 18px;
+							justify-content: space-between;
+							p {
+								font-weight: 600;
+								font-size: 20px;
+								line-height: 24px;
+								color: $dark;
+								display: flex;
+								align-items: center;
+								img {
+									margin-right: 18px;
+								}
+							}
+							select {
+								padding: 0px 10px;
+								width: 75px;
+								border: none;
+								outline: none;
+								border-radius: 5px;
+								background: $gray;
+								color: $fiolet;
+								font-weight: 700;
+								font-size: 12px;
 							}
 						}
-						select {
-							width: 10%;
-							border: none;
-background: $fiolet;
-color: white;
-							font-weight: 400;
-							font-size: 12px;
-							line-height: 15px;
-							// color: $gray-text;
-						}
+
 						.mainChart {
 							max-height: 240px;
 							height: 100%;
