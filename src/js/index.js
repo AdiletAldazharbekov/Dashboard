@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', ()=>{
 
-
-    const list = document.querySelector('.listCoins')
-    const btnViewAll = document.querySelector('.btnViewAll')
-    const btnNav = document.querySelector('.drop-btn')
-
-    const topCoins = document.querySelector('.content-top')
     
-    const ctx = document.querySelector('.mainChart').getContext('2d')
+   
+   
+
+    
+    
+    
 
    
    
-    let idCoin=0
+    
 
 // Функция определения направления тренда (зеленый вверх или красный вниз)
 const getTrand = (num)=>{
@@ -20,14 +19,18 @@ return num>0 ?
 `<img src="./src/img/icons/down.svg" alt="down"/><span class="red">${num*-1}%</span>`
 }
 
-// Список криптовалют
+// ============================================================================================================================
+
+
+const list = document.querySelector('.listCoins')
+// Списка крпитовалют для блока All Assets
+// Фомирования списка криптовалют и вывод их на экран
 const renderData = coins =>{
-    console.log(coins)
     coins.forEach(coinItem => {
         let listItem=document.createElement('li')
         listItem.className+='coinItem'
         listItem.innerHTML+=`
-            <a  href="${coinItem.websiteUrl}" target="_blank">
+            <a href="${coinItem.websiteUrl}" target="_blank">
                 <img class="coin-img" src="${coinItem.icon}" alt="coin"/>
                 <div class="coinDesc">
                     <div class="coin-name">
@@ -46,7 +49,31 @@ const renderData = coins =>{
     });
 }
 
-const renderData1 = coins =>{
+let skip = 0 //Переменная для стартовой позиции списка
+let limit=10 // лимит по сколько криптовалют показывать (добавлять в список)
+// Функция для Подключения к ресурсу через API
+const getData = async () => {  
+    try {
+        const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=${skip}&limit=${limit}`)
+        const data = await resp.json()
+        const {coins} = data
+        renderData(coins)
+        }
+    catch (e) {
+        console.log(`Ошибка - ${e}`)
+        }
+}
+getData()
+
+
+// ============================================================================================================================
+
+
+const topCoins = document.querySelector('.content-top')
+// Определения топовых крпитовалют для мини карточек вверхней части экрана
+
+// Фомирования списка криптовалют и вывод их на экран
+const renderTopCoins = coins =>{
     const coin3 = [...coins]
     let topCards = ['start','center','end']
     for(i=0; i<3; i++){
@@ -64,92 +91,138 @@ const renderData1 = coins =>{
     }     
 }
 
-
 // Функция для формирования списка крпитовалют
-let skip = 0
-let limit=10
-const getData = async () => {  
-    try {
-        const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=${skip}&limit=${limit}`)
-        const data = await resp.json()
-        const {coins} = data
-        renderData(coins)
-        }
-    catch (e) {
-        console.log(`Ошибка - ${e}`)
-        }
-}
-getData()
-// ===================================================================================
-
-
-// Функция для формирования списка крпитовалют
-const getCoin = async () => {  
+const getTopCoins = async () => {  
     try {
         const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=0&limit=100`)
         const data = await resp.json()
         const {coins} = data
-        renderData1(coins)
+        renderTopCoins(coins)
         }
     catch (e) {
         console.log(`Ошибка - ${e}`)
         }
     }
+getTopCoins()
+
+
+// ============================================================================================================================
+
+
+
+const xLabels=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+let day = new Date().getDate()
+// alert(day);
+
+let bgColor='#724BF2'
+let period='1m' //available periods - 24h | 1w | 1m | 3m | 6m | 1y |all
+let coinId='ethereum'
+let charType='bar'
+let myChart
+
+const canvasDiv = document.querySelector('.content-bottom-Left-portofolio')
+// Формирование массива данных для основного графика
+const renderDataCoin = coins =>{
+    let arr =[]
+    coins.forEach(element => {
+        arr.push(Math.round(element[1]))
+        let canvas=document.createElement('canvas')
+        canvas.className='mainChart'
+        canvasDiv.append(canvas)
+    })
+
+    const ctx = document.querySelector('.mainChart').getContext('2d')
+
+    let yMax = Math.ceil(Math.max.apply(null,arr)/1000)*1000 //определение максимальной шкалы
+    Chart.defaults.plugins.legend.display = false; // убирает дефолтную легенду
+
+    // Добавление основного графика за период
+   
+ 
+
+     myChart = new Chart (ctx, {
+        type: charType, //'bar', //'line',
+        data: {
+            labels:xLabels,
+            datasets: [{
+                data: arr,
+                backgroundColor: bgColor,
+                borderRadius: 4,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: yMax,
+                }
+            }
+        }
+    })
+}
+
+// Получение данных конкретной криптовалюты (coinId) по за пероид (period)
+const getCoin = async () => {  
+    try {
+        const resp = await fetch(`https://api.coinstats.app/public/v1/charts?period=${period}&coinId=${coinId}`)
+        const data = await resp.json()
+        const {chart} = data
+        xData=renderDataCoin(chart)
+        }
+    catch (e) {
+        console.log(`Ошибка - ${e}`)
+        }
+    }
+
 getCoin()
+
+//  <canvas class="mainChart"></canvas>
+
+
+
+// ============================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+// ============================================================================================================================
+
+
 
 // * * * * * *   События на действия пользоваателя   * * * * * *
 
 // при нажатии на кнопку "View All" увеличивается skip на размер limita и повторно вызывается функция getData
+const btnViewAll = document.querySelector('.btnViewAll')
+
 btnViewAll.addEventListener('click',()=> {
     skip+=limit
     getData()
 })
 
 // при нажатии на кнопку в навигационной панеле очищается верхняя часть и вызывается функция getTopCData
+const btnNav = document.querySelector('.drop-btn')
+
 btnNav.addEventListener('click',()=>{
     topCoins.innerHTML=''
-    getCoin()
+    getTopCoins()
 })
 
+// выбор типа основного графика
+const chartType = document.querySelector('#period')
 
-
-
-
-
-
-
-
-
-Chart.defaults.plugins.legend.display = false;
-const myChart = new Chart (ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-        datasets: [{
-            data: [2000, 3800, 6000, 4000, 2000, 3500, 4000, 4600, 4500, 2200],
-            backgroundColor: '#724BF2',
-            borderRadius: 4,
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
+chartType.addEventListener('change', (event) => {
+ charType=event.target.value
+ myChart.destroy()
+ getCoin()
 })
-
-
-
-
-
-
-
-
-
-
 
 
 

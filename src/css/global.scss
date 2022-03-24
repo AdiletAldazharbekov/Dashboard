@@ -12,7 +12,6 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Inter", sans-serif;
-	background: rgb(241, 97, 97);
 }
 .wrapper {
 	max-width: 1440px;
@@ -259,6 +258,16 @@ body {
 								margin-right: 18px;
 							}
 						}
+						select {
+							width: 10%;
+							border: none;
+background: $fiolet;
+color: white;
+							font-weight: 400;
+							font-size: 12px;
+							line-height: 15px;
+							// color: $gray-text;
+						}
 						.mainChart {
 							max-height: 240px;
 							height: 100%;
@@ -316,7 +325,7 @@ body {
 								background: rgba(99, 52, 254, 0.12);
 								border-radius: 6px;
 							}
-							img{
+							img {
 								cursor: pointer;
 							}
 						}

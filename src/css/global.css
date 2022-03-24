@@ -13,7 +13,6 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  background: #f16161;
 }
 
 .wrapper {
@@ -567,6 +566,15 @@ body {
 }
 .wrapper .main .content-bottom-Left-portofolio p img {
   margin-right: 18px;
+}
+.wrapper .main .content-bottom-Left-portofolio select {
+  width: 10%;
+  border: none;
+  background: #724bf2;
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
 }
 .wrapper .main .content-bottom-Left-portofolio .mainChart {
   max-height: 240px;
