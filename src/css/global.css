@@ -585,6 +585,7 @@ body {
   color: #724bf2;
   font-weight: 700;
   font-size: 12px;
+  cursor: pointer;
 }
 .wrapper .main .content-bottom-Left-portofolio .mainChart {
   max-height: 240px;

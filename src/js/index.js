@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
 
     
-   
-   
-
-    
-    
-    
-
-   
-   
-    
-
 // Функция определения направления тренда (зеленый вверх или красный вниз)
 const getTrand = (num)=>{
 return num>0 ?
@@ -168,7 +157,7 @@ const getCoin = async () => {
         const resp = await fetch(`https://api.coinstats.app/public/v1/charts?period=${period}&coinId=${coinId}`)
         const data = await resp.json()
         const {chart} = data
-        xData=renderDataCoin(chart)
+        renderDataCoin(chart)
         }
     catch (e) {
         console.log(`Ошибка - ${e}`)
@@ -177,7 +166,7 @@ const getCoin = async () => {
 
 getCoin()
 
-//  <canvas class="mainChart"></canvas>
+
 
 
 
@@ -222,7 +211,6 @@ chartType.addEventListener('change', (event) => {
     charType=event.target.value
     myChart.destroy()
     canvasDiv.lastChild.remove()
-    console.log('Canva')
     getCoin()
 })
 
