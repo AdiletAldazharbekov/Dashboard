@@ -305,12 +305,14 @@ body {
 							select {
 								padding: 12px 17px;
 								background: #efebff;
+								outline: none;
 								border: none;
 								border-radius: 12px;
 								font-weight: 500;
 								font-size: 12px;
 								line-height: 15px;
 								color: $dark;
+								cursor: pointer;
 							}
 						}
 						.transaction {
