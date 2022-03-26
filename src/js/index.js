@@ -145,7 +145,7 @@ canvasDiv.append(canvas)
                 y: {
                     beginAtZero: true,
                     max: yMax,
-                }
+                },
             }
         }
     })
@@ -171,6 +171,53 @@ getCoin()
 
 
 // ============================================================================================================================
+
+
+
+const list1 = document.querySelector('.listCoins')
+// Списка крпитовалют для блока All Assets
+// Фомирования списка криптовалют и вывод их на экран
+const renderList = coins =>{
+    coins.forEach(coinItem => {
+        let listItem=document.createElement('li')
+        listItem.className+='coinItem'
+        listItem.innerHTML+=`
+            <a href="${coinItem.websiteUrl}" target="_blank">
+                <img class="coin-img" src="${coinItem.icon}" alt="coin"/>
+                <div class="coinDesc">
+                    <div class="coin-name">
+                        <p class="name">${coinItem.name}</p>
+                        <p class="value">
+                        ${Math.round(coinItem.priceBtc*1000)/1000} ${coinItem.symbol} - $${Math.round(coinItem.price*100)/100}
+                        </p>
+                    </div>
+                    <div class="coin-price">
+                        <p class="price">$${Math.round(coinItem.priceBtc * coinItem.price*100)/100}</p>
+                        <div class="prc">${getTrand(coinItem.priceChange1h)}</div>
+                    </div>
+                </div>
+            </a>`
+        list.append(listItem)
+    });
+}
+
+let skip1 = 0 //Переменная для стартовой позиции списка
+let limit1=10 // лимит по сколько криптовалют показывать (добавлять в список)
+// Функция для Подключения к ресурсу через API
+const getList = async () => {  
+    try {
+        const resp = await fetch(`https://api.coinstats.app/public/v1/coins?skip=${skip1}&limit=${limit1}`)
+        const data = await resp.json()
+        const {coins} = data
+        renderList(coins)
+        }
+    catch (e) {
+        console.log(`Ошибка - ${e}`)
+        }
+}
+// getData()
+
+
 
 
 
